@@ -1,3 +1,0 @@
-$ bun run check-types:extension && bun run check-types:webview
-$ bun script/typecheck.ts
-$ bun script/typecheck.ts --project webview-ui/tsconfig.json

@@ -1,0 +1,48 @@
+# Contract Kit V17 Dependencies
+# Python 3.11+ required
+
+# Core Runtime
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-multipart>=0.0.6
+
+# Event Bus & Messaging
+nats-py>=2.6.0
+aiohttp>=3.9.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+pytest-playwright>=0.4.0
+pytest-html>=4.1.0
+pytest-json-report>=1.5.0
+playwright>=1.41.0
+httpx>=0.26.0
+
+# Blockchain Audit
+cryptography>=42.0.0
+hashlib2>=1.1.0
+
+# Hermes Agent
+openai>=1.10.0
+anthropic>=0.18.0
+google-generativeai>=0.3.0
+
+# WebUI
+jinja2>=3.1.0
+starlette>=0.35.0
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+click>=8.1.0
+rich>=13.7.0
+structlog>=24.1.0
+
+# Development
+black>=24.0.0
+ruff>=0.2.0
+mypy>=1.8.0
+pre-commit>=3.6.0
