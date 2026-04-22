@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568"/>
+    </marker>
+    <linearGradient id="grad-start" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e53e3e;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#c53030;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="grad-task" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4299e1;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#3182ce;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="grad-result" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#48bb78;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#38a169;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="grad-agent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9f7aea;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#805ad5;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="grad-tool" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ed8936;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#dd6b20;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2d3748">Research Task Workflow</text>
+
+  <!-- Start Node -->
+  <rect x="400" y="55" width="200" height="50" rx="25" fill="url(#grad-start)" stroke="#c53030" stroke-width="2"/>
+  <text x="500" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c53030">Research Request</text>
+
+  <!-- Arrow to Task Analysis -->
+  <path d="M 500 105 L 500 135" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 1: Task Analysis -->
+  <rect x="300" y="140" width="400" height="50" rx="8" fill="url(#grad-task)" stroke="#3182ce" stroke-width="2"/>
+  <text x="500" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2b6cb0">Step 1: Task Analysis</text>
+
+  <!-- Arrow to Sub-tasks -->
+  <path d="M 500 190 L 500 220" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Sub-task Distribution -->
+  <rect x="100" y="230" width="800" height="120" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="500" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d3748">Step 2: Parallel Sub-task Execution</text>
+
+  <!-- Sub-task boxes -->
+  <rect x="120" y="270" width="220" height="65" rx="6" fill="url(#grad-agent)" stroke="#805ad5" stroke-width="1.5"/>
+  <text x="230" y="295" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b46c1">Web Search Agent</text>
+  <text x="230" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4a5568">Search for information</text>
+  <text x="230" y="330" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#718096">Uses: search API</text>
+
+  <rect x="390" y="270" width="220" height="65" rx="6" fill="url(#grad-agent)" stroke="#805ad5" stroke-width="1.5"/>
+  <text x="500" y="295" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b46c1">Data Analyzer Agent</text>
+  <text x="500" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4a5568">Process &amp; extract data</text>
+  <text x="500" y="330" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#718096">Uses: analyzer tools</text>
+
+  <rect x="660" y="270" width="220" height="65" rx="6" fill="url(#grad-agent)" stroke="#805ad5" stroke-width="1.5"/>
+  <text x="770" y="295" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b46c1">Fact Checker Agent</text>
+  <text x="770" y="315" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4a5568">Verify facts &amp; sources</text>
+  <text x="770" y="330" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#718096">Uses: verification tools</text>
+
+  <!-- Arrows to Memory -->
+  <path d="M 230 335 L 230 370" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 500 335 L 500 370" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 770 335 L 770 370" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Memory System -->
+  <rect x="100" y="380" width="800" height="80" rx="8" fill="#e6fffa" stroke="#319795" stroke-width="2"/>
+  <text x="500" y="405" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c7a7b">Step 3: Memory Integration</text>
+  
+  <rect x="120" y="420" width="150" height="30" rx="4" fill="#b2f5ea" stroke="#319795" stroke-width="1"/>
+  <text x="195" y="440" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#2c7a7b">Working Memory</text>
+  
+  <rect x="300" y="420" width="150" height="30" rx="4" fill="#81e6d9" stroke="#319795" stroke-width="1"/>
+  <text x="375" y="440" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#2c7a7b">Episodic Memory</text>
+  
+  <rect x="480" y="420" width="150" height="30" rx="4" fill="#4fd1c5" stroke="#319795" stroke-width="1"/>
+  <text x="555" y="440" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#2c7a7b">Semantic Memory</text>
+  
+  <rect x="680" y="420" width="200" height="30" rx="4" fill="#38b2ac" stroke="#319795" stroke-width="1"/>
+  <text x="780" y="440" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#e6fffa">Knowledge Base</text>
+
+  <!-- Arrow to Synthesis -->
+  <path d="M 500 460 L 500 490" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4: Synthesis -->
+  <rect x="300" y="500" width="400" height="50" rx="8" fill="url(#grad-result)" stroke="#38a169" stroke-width="2"/>
+  <text x="500" y="530" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#276749">Step 4: Synthesis &amp; Report Generation</text>
+
+  <!-- Arrow to Final Result -->
+  <path d="M 500 550 L 500 580" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Final Result -->
+  <rect x="300" y="590" width="400" height="80" rx="8" fill="url(#grad-result)" stroke="#38a169" stroke-width="3"/>
+  <text x="500" y="620" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#276749">Research Report</text>
+  
+  <text x="500" y="645" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#4a5568">Summary | Sources | Key Findings | Confidence Score</text>
+
+  <!-- Legend -->
+  <rect x="50" y="60" width="150" height="100" rx="4" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="125" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#2d3748">Legend</text>
+  
+  <rect x="60" y="95" width="20" height="12" rx="2" fill="url(#grad-agent)" stroke="#805ad5" stroke-width="1"/>
+  <text x="90" y="105" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Agent</text>
+  
+  <rect x="60" y="115" width="20" height="12" rx="2" fill="url(#grad-tool)" stroke="#dd6b20" stroke-width="1"/>
+  <text x="90" y="125" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Tool/Service</text>
+  
+  <rect x="60" y="135" width="20" height="12" rx="2" fill="#e6fffa" stroke="#319795" stroke-width="1"/>
+  <text x="90" y="145" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Memory Store</text>
+
+  <!-- Workflow Metrics -->
+  <rect x="800" y="550" width="170" height="120" rx="4" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="885" y="570" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#2d3748">Workflow Metrics</text>
+  <text x="815" y="595" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Parallel Tasks: 3</text>
+  <text x="815" y="610" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Total Steps: 4</text>
+  <text x="815" y="625" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Est. Time: ~30-60s</text>
+  <text x="815" y="640" font-family="Arial, sans-serif" font-size="9" fill="#4a5568">Confidence: Calculated</text>
+
+</svg>

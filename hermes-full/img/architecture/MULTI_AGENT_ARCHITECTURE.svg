@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1a1a2e"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Multi-Agent Architecture</text>
+  
+  <!-- Hierarchical Coordination Layer -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="300" height="180" rx="10" fill="url(#grad1)" filter="url(#shadow)"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Hierarchical Coordination</text>
+    
+    <!-- Manager Agent -->
+    <rect x="20" y="50" width="260" height="50" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="150" y="80" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">Manager Agent</text>
+    <text x="150" y="95" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Task Decomposition &amp; Delegation</text>
+    
+    <!-- Worker Agents -->
+    <rect x="20" y="110" width="80" height="50" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="140" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Worker 1</text>
+    
+    <rect x="110" y="110" width="80" height="50" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="150" y="140" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Worker 2</text>
+    
+    <rect x="200" y="110" width="80" height="50" rx="5" fill="rgba(255,255,255,0.2)"/>
+    <text x="240" y="140" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Worker 3</text>
+    
+    <!-- Arrows from manager to workers -->
+    <path d="M150 100 L60 110" stroke="#fff" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M150 100 L150 110" stroke="#fff" stroke-width="2" fill="none"/>
+    <path d="M150 100 L240 110" stroke="#fff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Peer-to-Peer Communication Layer -->
+  <g transform="translate(450, 80)">
+    <rect x="0" y="0" width="300" height="180" rx="10" fill="url(#grad2)" filter="url(#shadow)"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Peer-to-Peer Communication</text>
+    
+    <!-- Peer Agents -->
+    <circle cx="60" cy="80" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="85" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Agent A</text>
+    
+    <circle cx="150" cy="80" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="150" y="85" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Agent B</text>
+    
+    <circle cx="240" cy="80" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="240" y="85" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Agent C</text>
+    
+    <circle cx="60" cy="140" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Agent D</text>
+    
+    <circle cx="150" cy="140" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="150" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Agent E</text>
+    
+    <circle cx="240" cy="140" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="240" y="145" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Agent F</text>
+    
+    <!-- P2P Connections -->
+    <line x1="90" y1="80" x2="120" y2="80" stroke="white" stroke-width="1" stroke-dasharray="3"/>
+    <line x1="180" y1="80" x2="210" y2="80" stroke="white" stroke-width="1" stroke-dasharray="3"/>
+    <line x1="60" y1="110" x2="60" y2="110" stroke="white" stroke-width="1"/>
+    <line x1="90" y1="90" x2="120" y2="120" stroke="white" stroke-width="1" stroke-dasharray="3"/>
+    <line x1="180" y1="90" x2="120" y2="120" stroke="white" stroke-width="1" stroke-dasharray="3"/>
+    <line x1="210" y1="90" x2="120" y2="120" stroke="white" stroke-width="1" stroke-dasharray="3"/>
+  </g>
+  
+  <!-- Message Bus Architecture -->
+  <g transform="translate(800, 80)">
+    <rect x="0" y="0" width="300" height="180" rx="10" fill="url(#grad3)" filter="url(#shadow)"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Message Bus Architecture</text>
+    
+    <!-- Message Bus -->
+    <rect x="75" y="50" width="150" height="100" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="150" y="80" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">Message Bus</text>
+    <text x="150" y="100" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Topic Routing</text>
+    <text x="150" y="115" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Pub/Sub System</text>
+    <text x="150" y="130" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Queue Management</text>
+    
+    <!-- Publishers -->
+    <rect x="10" y="60" width="55" height="30" rx="3" fill="rgba(255,255,255,0.2)"/>
+    <text x="37" y="80" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Pub 1</text>
+    
+    <rect x="10" y="100" width="55" height="30" rx="3" fill="rgba(255,255,255,0.2)"/>
+    <text x="37" y="120" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Pub 2</text>
+    
+    <!-- Subscribers -->
+    <rect x="235" y="60" width="55" height="30" rx="3" fill="rgba(255,255,255,0.2)"/>
+    <text x="262" y="80" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Sub 1</text>
+    
+    <rect x="235" y="100" width="55" height="30" rx="3" fill="rgba(255,255,255,0.2)"/>
+    <text x="262" y="120" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Sub 2</text>
+    
+    <!-- Arrows -->
+    <path d="M65 75 L75 75" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M65 115 L75 115" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M225 75 L235 75" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M225 115 L235 115" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Skill Sharing Layer -->
+  <g transform="translate(100, 300)">
+    <rect x="0" y="0" width="1000" height="200" rx="10" fill="url(#grad4)" filter="url(#shadow)"/>
+    <text x="500" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Skill Sharing Between Agents</text>
+    
+    <!-- Skill Registry -->
+    <rect x="400" y="50" width="200" height="130" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="500" y="80" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">Skill Registry</text>
+    <line x1="420" y1="95" x2="580" y2="95" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="500" y="115" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">web_search: v1.2</text>
+    <text x="500" y="130" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">code_review: v2.0</text>
+    <text x="500" y="145" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">data_analysis: v1.5</text>
+    <text x="500" y="160" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">+ 47 more skills</text>
+    
+    <!-- Agent 1 -->
+    <g transform="translate(50, 80)">
+      <rect x="0" y="0" width="100" height="70" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Researcher</text>
+      <text x="50" y="42" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">web_search</text>
+      <text x="50" y="55" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">data_analysis</text>
+    </g>
+    
+    <!-- Agent 2 -->
+    <g transform="translate(180, 80)">
+      <rect x="0" y="0" width="100" height="70" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Coder</text>
+      <text x="50" y="42" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">code_review</text>
+      <text x="50" y="55" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">refactor</text>
+    </g>
+    
+    <!-- Agent 3 -->
+    <g transform="translate(750, 80)">
+      <rect x="0" y="0" width="100" height="70" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Planner</text>
+      <text x="50" y="42" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">task_decomp</text>
+      <text x="50" y="55" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">scheduling</text>
+    </g>
+    
+    <!-- Agent 4 -->
+    <g transform="translate(880, 80)">
+      <rect x="0" y="0" width="100" height="70" rx="5" fill="rgba(255,255,255,0.2)"/>
+      <text x="50" y="25" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Reviewer</text>
+      <text x="50" y="42" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">code_review</text>
+      <text x="50" y="55" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">quality_check</text>
+    </g>
+    
+    <!-- Skill sharing arrows -->
+    <path d="M150 115 L400 115" stroke="white" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+    <path d="M280 115 L400 115" stroke="white" stroke-width="1" stroke-dasharray="5,5"/>
+    <path d="M600 115 L750 115" stroke="white" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+    <path d="M600 115 L880 115" stroke="white" stroke-width="1" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- ACP Message Protocol -->
+  <g transform="translate(100, 540)">
+    <rect x="0" y="0" width="1000" height="220" rx="10" fill="#2d3436" filter="url(#shadow)"/>
+    <text x="500" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">ACP (Agent Communication Protocol) Message Flow</text>
+    
+    <!-- Message Types -->
+    <g transform="translate(50, 60)">
+      <rect x="0" y="0" width="150" height="60" rx="5" fill="rgba(102,126,234,0.3)"/>
+      <text x="75" y="25" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">REQUEST</text>
+      <text x="75" y="45" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">{sender, task, ...}</text>
+    </g>
+    
+    <g transform="translate(220, 60)">
+      <rect x="0" y="0" width="150" height="60" rx="5" fill="rgba(240,147,251,0.3)"/>
+      <text x="75" y="25" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">RESPONSE</text>
+      <text x="75" y="45" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">{receiver, result, ...}</text>
+    </g>
+    
+    <g transform="translate(390, 60)">
+      <rect x="0" y="0" width="150" height="60" rx="5" fill="rgba(79,172,254,0.3)"/>
+      <text x="75" y="25" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">BROADCAST</text>
+      <text x="75" y="45" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">{topic, data, ...}</text>
+    </g>
+    
+    <g transform="translate(560, 60)">
+      <rect x="0" y="0" width="150" height="60" rx="5" fill="rgba(67,233,123,0.3)"/>
+      <text x="75" y="25" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">QUERY</text>
+      <text x="75" y="45" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">{asker, question, ...}</text>
+    </g>
+    
+    <!-- Message Flow Example -->
+    <g transform="translate(50, 140)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">Message Flow Example:</text>
+      
+      <rect x="0" y="15" width="80" height="30" rx="3" fill="rgba(102,126,234,0.5)"/>
+      <text x="40" y="35" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Planner</text>
+      
+      <path d="M85 30 L120 30" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <text x="102" y="25" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">REQUEST</text>
+      
+      <rect x="125" y="15" width="80" height="30" rx="3" fill="rgba(79,172,254,0.5)"/>
+      <text x="165" y="35" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Message Bus</text>
+      
+      <path d="M210 30 L245 30" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <text x="227" y="25" font-family="Courier New, monospace" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">BROADCAST</text>
+      
+      <rect x="250" y="15" width="80" height="30" rx="3" fill="rgba(240,147,251,0.5)"/>
+      <text x="290" y="35" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Researchers</text>
+    </g>
+    
+    <!-- Topic Subscriptions -->
+    <g transform="translate(750, 140)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)">Topic Subscriptions:</text>
+      
+      <rect x="0" y="15" width="200" height="50" rx="3" fill="rgba(0,0,0,0.3)"/>
+      <text x="100" y="35" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.8)" text-anchor="middle">topics["research"] = [A, B, C]</text>
+      <text x="100" y="50" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.8)" text-anchor="middle">topics["code"] = [B, D, E]</text>
+    </g>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(100, 770)">
+    <rect x="0" y="0" width="1000" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <circle cx="30" cy="12" r="6" fill="url(#grad1)"/>
+    <text x="45" y="16" font-family="Arial, sans-serif" font-size="10" fill="white">Hierarchical</text>
+    
+    <circle cx="150" cy="12" r="6" fill="url(#grad2)"/>
+    <text x="165" y="16" font-family="Arial, sans-serif" font-size="10" fill="white">Peer-to-Peer</text>
+    
+    <circle cx="290" cy="12" r="6" fill="url(#grad3)"/>
+    <text x="305" y="16" font-family="Arial, sans-serif" font-size="10" fill="white">Message Bus</text>
+    
+    <circle cx="430" cy="12" r="6" fill="url(#grad4)"/>
+    <text x="445" y="16" font-family="Arial, sans-serif" font-size="10" fill="white">Skill Sharing</text>
+    
+    <text x="570" y="16" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Hermes ACP Protocol</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="l1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6B7280;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9CA3AF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l3Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l4Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l5Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#1a1a2e"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Agent Capability Evolution L1 - L5</text>
+  
+  <!-- L1: Single Task -->
+  <g transform="translate(60, 70)">
+    <rect x="0" y="0" width="180" height="280" rx="10" fill="url(#l1Grad)" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">L1</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">REACTIVE</text>
+    
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Single task execution</text>
+    <text x="90" y="90" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">No memory</text>
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">No learning</text>
+    
+    <!-- Icon: Single circle -->
+    <circle cx="90" cy="160" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="90" y="165" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">●</text>
+    
+    <!-- Examples -->
+    <rect x="15" y="210" width="150" height="55" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="90" y="230" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">Examples:</text>
+    <text x="90" y="245" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• Simple chatbot</text>
+    <text x="90" y="258" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• Command execution</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M250 210 L280 210" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- L2: Tool Use -->
+  <g transform="translate(290, 70)">
+    <rect x="0" y="0" width="180" height="280" rx="10" fill="url(#l2Grad)" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">L2</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">TOOL USE</text>
+    
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Uses external tools</text>
+    <text x="90" y="90" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Basic planning</text>
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Session memory</text>
+    
+    <!-- Icon: Tool -->
+    <circle cx="90" cy="160" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="90" y="165" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">🔧</text>
+    
+    <!-- Examples -->
+    <rect x="15" y="210" width="150" height="55" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="90" y="230" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">Examples:</text>
+    <text x="90" y="245" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• ReAct agents</text>
+    <text x="90" y="258" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• Function calling</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M480 210 L510 210" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- L3: ReAct + Planning -->
+  <g transform="translate(520, 70)">
+    <rect x="0" y="0" width="180" height="280" rx="10" fill="url(#l3Grad)" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">L3</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">PLANNING</text>
+    
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Task decomposition</text>
+    <text x="90" y="90" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Multi-step reasoning</text>
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Basic self-correction</text>
+    
+    <!-- Icon: Steps -->
+    <circle cx="60" cy="160" r="15" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="165" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">1</text>
+    <path d="M75 160 L95 160" stroke="white" stroke-width="2"/>
+    <circle cx="110" cy="160" r="15" fill="rgba(255,255,255,0.2)"/>
+    <text x="110" y="165" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">2</text>
+    <path d="M125 160 L145 160" stroke="white" stroke-width="2"/>
+    <circle cx="125" cy="160" r="15" fill="rgba(255,255,255,0.2)"/>
+    <text x="125" y="165" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">3</text>
+    
+    <!-- Examples -->
+    <rect x="15" y="210" width="150" height="55" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="90" y="230" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">Examples:</text>
+    <text x="90" y="245" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• Hermes current</text>
+    <text x="90" y="258" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• OpenAI Assistants</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M710 210 L740 210" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- L4: Self-Correction + Learning -->
+  <g transform="translate(750, 70)">
+    <rect x="0" y="0" width="180" height="280" rx="10" fill="url(#l4Grad)" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">L4</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">LEARNING</text>
+    
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Reflexion self-correction</text>
+    <text x="90" y="90" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Skill acquisition</text>
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Persistent memory</text>
+    
+    <!-- Icon: Loop -->
+    <circle cx="90" cy="160" r="30" fill="rgba(255,255,255,0.2)"/>
+    <path d="M75 150 A20 20 0 1 1 75 170" stroke="white" stroke-width="3" fill="none"/>
+    <path d="M105 150 A20 20 0 1 1 105 170" stroke="white" stroke-width="3" fill="none"/>
+    <polygon points="75,150 80,145 85,152" fill="white"/>
+    
+    <!-- Examples -->
+    <rect x="15" y="210" width="150" height="55" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="90" y="230" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">Examples:</text>
+    <text x="90" y="245" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• OpenHands Reflexion</text>
+    <text x="90" y="258" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• Voyager skills</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M940 210 L970 210" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- L5: Full Autonomy -->
+  <g transform="translate(980, 70)">
+    <rect x="0" y="0" width="180" height="280" rx="10" fill="url(#l5Grad)" filter="url(#shadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">L5</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">AUTONOMOUS</text>
+    
+    <text x="90" y="75" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Goal decomposition</text>
+    <text x="90" y="90" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Self-directed learning</text>
+    <text x="90" y="105" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Meta-learning</text>
+    
+    <!-- Icon: Star/Brain -->
+    <circle cx="90" cy="160" r="30" fill="rgba(255,255,255,0.2)"/>
+    <text x="90" y="167" font-family="Arial, sans-serif" font-size="28" fill="white" text-anchor="middle">★</text>
+    
+    <!-- Examples -->
+    <rect x="15" y="210" width="150" height="55" rx="5" fill="rgba(0,0,0,0.3)"/>
+    <text x="90" y="230" font-family="Arial, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">Examples:</text>
+    <text x="90" y="245" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• AGI research</text>
+    <text x="90" y="258" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle">• AutoGPT complex goals</text>
+  </g>
+  
+  <!-- Legend at bottom -->
+  <g transform="translate(50, 365)">
+    <rect x="0" y="0" width="1100" height="30" rx="5" fill="rgba(255,255,255,0.1)"/>
+    
+    <circle cx="30" cy="15" r="8" fill="#6B7280"/>
+    <text x="45" y="19" font-family="Arial, sans-serif" font-size="10" fill="white">L1: Reactive</text>
+    
+    <circle cx="160" cy="15" r="8" fill="#3B82F6"/>
+    <text x="175" y="19" font-family="Arial, sans-serif" font-size="10" fill="white">L2: Tool Use</text>
+    
+    <circle cx="310" cy="15" r="8" fill="#8B5CF6"/>
+    <text x="325" y="19" font-family="Arial, sans-serif" font-size="10" fill="white">L3: Planning</text>
+    
+    <circle cx="460" cy="15" r="8" fill="#F59E0B"/>
+    <text x="475" y="19" font-family="Arial, sans-serif" font-size="10" fill="white">L4: Learning</text>
+    
+    <circle cx="610" cy="15" r="8" fill="#10B981"/>
+    <text x="625" y="19" font-family="Arial, sans-serif" font-size="10" fill="white">L5: Autonomous</text>
+    
+    <text x="800" y="19" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Hermes Target: L4.5-5</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+</svg>

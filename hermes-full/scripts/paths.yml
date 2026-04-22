@@ -1,0 +1,99 @@
+# ~/.hermes/paths.yml - Dynamic Path Registry for Hermes
+# This file defines all access points Hermes can use across environments
+
+paths:
+  # Windows drives (accessible via WSL mounts)
+  - id: "windows-c"
+    name: "Windows C: Drive"
+    type: "local"
+    uri: "file:///mnt/c"
+    description: "Windows C: drive mounted in WSL"
+    tags: ["windows", "local", "storage"]
+
+  - id: "windows-g"
+    name: "Windows G: Drive"
+    type: "local"
+    uri: "file:///mnt/g"
+    description: "Windows G: drive mounted in WSL (GitHub repos)"
+    tags: ["windows", "local", "git"]
+
+  # VPS remote access
+  - id: "vps-root"
+    name: "VPS Root Access"
+    type: "ssh"
+    uri: "ssh://root@YOUR_VPS_IP"
+    description: "VPS root access for container management"
+    tags: ["remote", "vps", "ssh"]
+
+  - id: "vps-hermes1"
+    name: "Hermes Bot 1 Container"
+    type: "docker"
+    uri: "docker://hermes1"
+    description: "Hermes Discord bot 1 (Planning Strategist)"
+    tags: ["container", "hermes", "discord"]
+
+  - id: "vps-hermes2"
+    name: "Hermes Bot 2 Container"
+    type: "docker"
+    uri: "docker://hermes2"
+    description: "Hermes Discord bot 2 (Creative Brainstormer)"
+    tags: ["container", "hermes", "discord"]
+
+  - id: "vps-hermes3"
+    name: "Hermes Bot 3 Container"
+    type: "docker"
+    uri: "docker://hermes3"
+    description: "Hermes Discord bot 3 (System Architect)"
+    tags: ["container", "hermes", "discord"]
+
+  - id: "vps-hermes4"
+    name: "Hermes Bot 4 Container"
+    type: "docker"
+    uri: "docker://hermes4"
+    description: "Hermes Discord bot 4 (Bug Triage Specialist)"
+    tags: ["container", "hermes", "discord"]
+
+  - id: "vps-hermes5"
+    name: "Hermes Bot 5 Container"
+    type: "docker"
+    uri: "docker://hermes5"
+    description: "Hermes Discord bot 5 (Root Cause Analyst)"
+    tags: ["container", "hermes", "discord"]
+
+  # Local WSL workspace symlinks
+  - id: "wsl-work-vps"
+    name: "WSL Work VPS Scripts"
+    type: "local"
+    uri: "file:///home/fnice/work/vps"
+    description: "Symlink to VPS scripts directory"
+    tags: ["local", "wsl", "scripts"]
+
+  - id: "wsl-work-github"
+    name: "WSL Work GitHub"
+    type: "local"
+    uri: "file:///home/fnice/work/github"
+    description: "Symlink to GitHub repositories"
+    tags: ["local", "wsl", "git"]
+
+  - id: "wsl-work-hermes-kit"
+    name: "WSL Work Hermes Kit"
+    type: "local"
+    uri: "file:///home/fnice/work/hermes-kit"
+    description: "Symlink to Hermes kit directory"
+    tags: ["local", "wsl", "hermes"]
+
+  # GitHub repositories
+  - id: "github-hermes-agent"
+    name: "Hermes Agent Repository"
+    type: "git"
+    uri: "https://github.com/nousresearch/hermes-agent"
+    description: "Main Hermes agent repository"
+    tags: ["github", "hermes", "repo"]
+
+  # Shiba memory (VPS)
+  - id: "shiba-memory"
+    name: "Shiba Memory Service"
+    type: "http"
+    uri: "http://YOUR_VPS_IP:18789"
+    description: "Shiba long-term memory service"
+    tags: ["memory", "vps", "http"]

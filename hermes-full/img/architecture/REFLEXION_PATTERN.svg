@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <linearGradient id="execGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="evalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="reflectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="planGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#white"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#1a1a2e"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Reflexion Self-Correction Pattern</text>
+  <text x="500" y="55" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle">Execute → Evaluate → Reflect → Plan → Execute</text>
+  
+  <!-- Central Loop -->
+  <g transform="translate(500, 300)">
+    <!-- Outer ring representing the loop -->
+    <circle cx="0" cy="0" r="200" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="40"/>
+    
+    <!-- Execute Phase -->
+    <g transform="translate(-150, -60)">
+      <rect x="0" y="0" width="120" height="80" rx="10" fill="url(#execGrad)" filter="url(#shadow)"/>
+      <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">EXECUTE</text>
+      <text x="60" y="50" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Perform Action</text>
+      <text x="60" y="65" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Generate Result</text>
+    </g>
+    
+    <!-- Evaluate Phase -->
+    <g transform="translate(30, -140)">
+      <rect x="0" y="0" width="120" height="80" rx="10" fill="url(#evalGrad)" filter="url(#shadow)"/>
+      <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">EVALUATE</text>
+      <text x="60" y="50" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Check Result</text>
+      <text x="60" y="65" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">vs. Expected</text>
+    </g>
+    
+    <!-- Reflect Phase -->
+    <g transform="translate(150, -60)">
+      <rect x="0" y="0" width="120" height="80" rx="10" fill="url(#reflectGrad)" filter="url(#shadow)"/>
+      <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">REFLECT</text>
+      <text x="60" y="50" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Analyze Failure</text>
+      <text x="60" y="65" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Extract Lesson</text>
+    </g>
+    
+    <!-- Plan Phase -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="120" height="80" rx="10" fill="url(#planGrad)" filter="url(#shadow)"/>
+      <text x="60" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">PLAN</text>
+      <text x="60" y="50" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">New Strategy</text>
+      <text x="60" y="65" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)" text-anchor="middle">Avoid Pitfalls</text>
+    </g>
+    
+    <!-- Curved arrows between phases -->
+    <!-- Execute to Evaluate -->
+    <path d="M-90 -20 Q-50 -80 0 -120" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    
+    <!-- Evaluate to Reflect -->
+    <path d="M70 -120 Q120 -80 110 -20" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    
+    <!-- Reflect to Plan -->
+    <path d="M110 20 Q120 60 70 100" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    
+    <!-- Plan to Execute -->
+    <path d="M-30 100 Q-80 60 -90 20" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  
+  <!-- Lesson Memory Store -->
+  <g transform="translate(50, 450)">
+    <rect x="0" y="0" width="280" height="130" rx="10" fill="rgba(255,255,255,0.1)" filter="url(#shadow)"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Lesson Memory Store</text>
+    
+    <rect x="10" y="40" width="260" height="35" rx="5" fill="rgba(102,126,234,0.3)"/>
+    <text x="20" y="58" font-family="Courier New, monospace" font-size="9" fill="white">Task: API调用失败</text>
+    <text x="20" y="70" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.7)">Lesson: 添加超时和重试机制</text>
+    
+    <rect x="10" y="80" width="260" height="35" rx="5" fill="rgba(240,147,251,0.3)"/>
+    <text x="20" y="98" font-family="Courier New, monospace" font-size="9" fill="white">Task: 文件权限错误</text>
+    <text x="20" y="110" font-family="Courier New, monospace" font-size="9" fill="rgba(255,255,255,0.7)">Lesson: 使用临时目录处理</text>
+  </g>
+  
+  <!-- Success Path -->
+  <g transform="translate(670, 450)">
+    <rect x="0" y="0" width="280" height="130" rx="10" fill="rgba(67,233,123,0.2)" filter="url(#shadow)"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Success Path</text>
+    
+    <path d="M30 60 L60 60 L60 50 L90 60 L90 70 L120 70" stroke="#43e97b" stroke-width="2" fill="none"/>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Execute → Success!</text>
+    
+    <path d="M170 60 L200 60 L200 50 L230 60 L230 70 L260 70" stroke="#43e97b" stroke-width="2" fill="none"/>
+    <text x="170" y="85" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Store Pattern</text>
+    
+    <path d="M260 60 L280 60" stroke="#43e97b" stroke-width="2" fill="none"/>
+    <circle cx="290" cy="60" r="15" fill="#43e97b"/>
+    <text x="290" y="65" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">✓</text>
+  </g>
+  
+  <!-- Failure Path -->
+  <g transform="translate(670, 200)">
+    <rect x="0" y="0" width="280" height="130" rx="10" fill="rgba(245,87,108,0.2)" filter="url(#shadow)"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Failure Path</text>
+    
+    <path d="M30 60 L60 60 L60 50 L90 60 L90 70 L120 70" stroke="#f5576c" stroke-width="2" fill="none"/>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Execute → Failure!</text>
+    
+    <path d="M170 60 L200 60 L200 50 L230 60 L230 70 L260 70" stroke="#f5576c" stroke-width="2" fill="none"/>
+    <text x="170" y="85" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Reflect &amp; Learn</text>
+    
+    <path d="M260 70 L280 70" stroke="#f5576c" stroke-width="2" fill="none"/>
+    <circle cx="290" cy="70" r="15" fill="#f5576c"/>
+    <text x="290" y="75" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">↻</text>
+  </g>
+  
+  <!-- Connection from Evaluate to Success/Failure -->
+  <path d="M620 240 L670 265" stroke="white" stroke-width="1.5" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M620 360 L670 335" stroke="white" stroke-width="1.5" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Code snippet -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="350" height="100" rx="5" fill="rgba(0,0,0,0.4)"/>
+    <text x="10" y="20" font-family="Courier New, monospace" font-size="10" fill="#43e97b">async def execute_with_reflexion(task):</text>
+    <text x="20" y="35" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)">for attempt in range(max_retries):</text>
+    <text x="30" y="50" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)">result = await execute(task)</text>
+    <text x="30" y="65" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)">if await evaluate(result):</text>
+    <text x="40" y="80" font-family="Courier New, monospace" font-size="10" fill="#43e97b">return result</text>
+    <text x="30" y="95" font-family="Courier New, monospace" font-size="10" fill="rgba(255,255,255,0.8)">lesson = await reflect(task, result)</text>
+  </g>
+  
+  <!-- Key Components Legend -->
+  <g transform="translate(50, 200)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Key Components:</text>
+    
+    <rect x="0" y="15" width="15" height="15" rx="3" fill="url(#execGrad)"/>
+    <text x="25" y="27" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Execute: Perform the action</text>
+    
+    <rect x="0" y="40" width="15" height="15" rx="3" fill="url(#evalGrad)"/>
+    <text x="25" y="52" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Evaluate: Check result quality</text>
+    
+    <rect x="0" y="65" width="15" height="15" rx="3" fill="url(#reflectGrad)"/>
+    <text x="25" y="77" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Reflect: Extract lessons from failure</text>
+    
+    <rect x="0" y="90" width="15" height="15" rx="3" fill="url(#planGrad)"/>
+    <text x="25" y="102" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Plan: Strategy for next attempt</text>
+  </g>
+</svg>
