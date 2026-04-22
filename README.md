@@ -1,215 +1,123 @@
-# KiloCode Contract Kit Version 17
+# Hermes Ecosystem
 
-## Consolidated Multi-Agent Contract Processing System
+The consolidated Hermes AI ecosystem including Contract Kit v17, Hermes agents, WebUI, and deployment tooling.
 
-![Contract Kit Banner](diagrams/banner.svg)
+## Repository Structure
 
----
-
-## Overview
-
-Version 17 represents the consolidation of all useful components, patterns, and implementations from multiple source folders and external repositories into a single, production-ready system featuring a five-lane architecture.
-
-### Key Improvements Over Previous Versions
-
-- **Complete packet-based contract system** with control, task, completion, and repair packets
-- **Integrated SSH MCP tooling** for remote administration
-- **Evidence/DevTools panel** inspired by claude-devtools
-- **Full five-lane architecture** with WebUI, KiloCode, Runtime, Hermes, and Proof lanes
-- **Comprehensive SVG documentation** embedded throughout
-
----
-
-## Architecture Diagram
-
-![Five-Lane Architecture](diagrams/five_lane_architecture.svg)
-
----
-
-## Five-Lane Architecture
-
-| Lane | Purpose | Key Components |
-|------|---------|----------------|
-| **Lane 1: WebUI** | Control Center | Control Center, Providers, Agents, Workflows, Evidence/DevTools, Repairs/Safemode, Settings |
-| **Lane 2: KiloCode** | Runtime Sync | Active Task Panel, Completion Submitter, Provider Status, Evidence Return, Settings Autofill |
-| **Lane 3: Runtime + Provider** | Infrastructure | Canonical Settings, Event Bus, Provider Router, Question Flow, Mode Enforcement |
-| **Lane 4: Hermes + ZeroClaw** | Orchestration | Intake Normalization, Contract Creation, Task Fan-Out, Validation, Repair Routing |
-| **Lane 5: Proof / Testing** | Validation | Playwright UI Tests, Boot-Gate Tests, Failover Tests, Autofill Tests, Repair Tests |
-
----
+```
+hermes.daveai.tech/
+├── src/                        # Core source code
+│   ├── kilocode/               # KiloCode audit engine (20 agents)
+│   ├── hermes/                 # Hermes agent system
+│   ├── webui/                  # WebUI Control Center
+│   │   ├── agents_panel.py     # ZeroClaw + Hermes agent management
+│   │   └── control_center.py   # Main FastAPI app
+│   ├── runtime/                # Runtime engine
+│   ├── zeroclaw/               # ZeroClaw agents
+│   └── proof/                  # Proof system
+├── hermes-full/                # Full Hermes agent (Discord bots H1-H5)
+├── webui-full/                 # Full WebUI React frontend
+├── tests/                      # Test suite (unit, integration, e2e)
+├── deploy/                     # Deployment packages
+├── docs/                       # Documentation
+├── scripts/                    # Setup and utility scripts
+├── .github/workflows/          # CI/CD pipelines
+├── docker-compose.yml          # One-command deployment
+├── .env.example                # Environment template
+└── requirements.txt            # Python dependencies
+```
 
 ## Quick Start
 
-### Prerequisites
+### Windows
 
-- Python 3.10+
-- Node.js 18+
-- NATS JetStream (or Redis for alternative event bus)
+```powershell
+git clone https://github.com/Ghenghis/hermes.daveai.tech.git
+cd hermes.daveai.tech
+.\scripts\setup.ps1
+```
 
-### Installation
+### Linux / VPS
 
 ```bash
-# Clone the repository
 git clone https://github.com/Ghenghis/hermes.daveai.tech.git
-cd contract-kit-v17
-
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Install Node dependencies
-npm install
-
-# Configure environment
+cd hermes.daveai.tech
 cp .env.example .env
 # Edit .env with your API keys
+docker-compose up -d
 ```
 
-### Running the System
+## Agents
+
+### ZeroClaw Agents
+| Agent | Role |
+|-------|------|
+| Git Agent | Repository management |
+| Shell Agent | Command execution |
+| Filesystem Agent | File operations |
+| Research Agent | Web research |
+
+### Hermes Discord Bots (H1-H5)
+| Bot | Channel | Role |
+|-----|---------|------|
+| hermes1 | #general | Planning Strategist |
+| hermes2 | #planning | Creative Brainstormer |
+| hermes3 | #design | System Architect |
+| hermes4 | #issues | Bug Triage Specialist |
+| hermes5 | #problems | Root Cause Analyst |
+
+## Configuration
+
+Copy `.env.example` to `.env` and fill in your keys:
 
 ```bash
-# Start the Runtime Core API (stub - implement src/runtime/core.py first)
-python -m src.runtime.core
-
-# Start the WebUI (requires implementation)
-cd src/webui && npm run dev
-
-# Start Hermes Agent (integrate with hermes-agent separately)
-# python run_agent.py  # External - see hermes-agent repository
+cp .env.example .env
 ```
 
----
+Required keys:
+- `SILICONFLOW_API_KEY` - Primary LLM API
+- `MINIMAX_API_KEY` - Secondary LLM API
+- `DISCORD_TOKEN` - For Hermes bots
+- `GITHUB_TOKEN` - For GitHub operations
+- `DATABASE_URL` - PostgreSQL connection
 
-## Source Materials
+## Deployment
 
-This version consolidates components from:
+### Docker (Recommended)
 
-### Local Sources
-
-| Source | Key Contributions |
-|--------|-------------------|
-| `v16_implementation_closure_master_kit` | Packet schemas, boot gate flow, 36-phase plan |
-| `kilocode-Azure2` | VSIX extension, 21 services, routing, governance |
-| `hermes-agent-2026.4.13` | Base agent, tool registry, hierarchical crew |
-| `VPS (C:\Users\Admin\Downloads\VPS)` | Evidence ledger, 5 agent roles, DaveAI platform |
-
-### External Repositories
-
-| Repository | Integration Method |
-|------------|-------------------|
-| [MCP SSH Agent](https://github.com/aiondadotcom/mcp-ssh) | Direct integration |
-| [claude-devtools](https://github.com/matt1398/claude-devtools) | Adapted for evidence panels |
-| [opcode](https://github.com/winfunc/opcode) | Pattern borrowing (AGPL) |
-| [claudecodeui](https://github.com/siteboon/claudecodeui) | Pattern borrowing (AGPL) |
-| [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | Research inventory |
-
----
-
-## Documentation Structure
-
-```
-contract-kit-v17/
-├── README.md                    # This file
-├── GAP_ANALYSIS.md             # Detailed gap analysis
-├── MERGE_MATRIX.md             # Source-to-lane mapping
-├── ARCHITECTURE.md             # System architecture
-├── docs/
-│   ├── 01_FIVE_LANE_ARCHITECTURE.md    # Detailed lane specs
-│   ├── 02_WEBUI_LANE.md               # WebUI implementation
-│   ├── 03_KILOCODE_LANE.md            # KiloCode implementation
-│   ├── 04_RUNTIME_PROVIDER_LANE.md    # Runtime implementation
-│   ├── 05_HERMES_ZEROCLAW_LANE.md     # Hermes implementation
-│   ├── 06_PROOF_TESTING_LANE.md       # Testing implementation
-│   ├── 07_EXTERNAL_REPOSITORIES.md    # External repo integration
-│   └── 08_IMPLEMENTATION_ROADMAP.md   # 36-phase implementation plan
-├── diagrams/                   # SVG architecture diagrams
-├── configs/                    # Packet schemas, settings
-├── src/                        # Source code
-└── tests/                      # E2E test suite
+```bash
+docker-compose up -d
 ```
 
----
+Services started:
+- `webui` - React frontend on port 3000
+- `api` - FastAPI backend on port 8000
+- `db` - PostgreSQL on port 5432
+- `redis` - Redis on port 6379
+- `nginx` - Reverse proxy on port 80/443
 
-## Key Features
+### VPS Deployment
 
-### Packet-Based Contract System
-
-![Packet Flow](diagrams/packet_flow.svg)
-
-All operations flow through typed packets:
-
-- **Control Packets**: Source identity, actions (project.start, repair.run)
-- **Task Packets**: Project ID, phase, objective, acceptance criteria
-- **Completion Packets**: Status, changed files, tests, artifacts
-- **Repair Packets**: Error context, repair actions, validation
-
-### Boot Gate / Safemode
-
-![Boot Gate](diagrams/boot_gate_repair.svg)
-
-Health matrix validation before launch with forced safemode on failures.
-
-### Settings Autofill
-
-![Settings](diagrams/settings_closure.svg)
-
-Runtime-owned canonical settings with user prompts only for secrets.
-
----
-
-## Provider Routing
-
-| Provider | Primary Use | Fallback |
-|----------|-------------|----------|
-| MiniMax | Primary execution | SiliconFlow |
-| SiliconFlow | ZeroClaw-first | LM Studio |
-| LM Studio | Local fallback | Ollama |
-| Ollama | Offline fallback | None |
-
----
+See [DEPLOYMENT.md](DEPLOYMENT.md) for full VPS deployment guide targeting `187.77.30.206`.
 
 ## Testing
 
 ```bash
-# Run all tests (requires implementation)
-pytest tests/ -v
+# Python unit tests
+python -m pytest tests/unit -v
 
-# Run E2E tests (Playwright - requires implementation)
-playwright test tests/e2e/
+# E2E tests with Playwright
+python run_playwright_tests.py
 
-# Run specific lane tests
-pytest tests/e2e/test_webui.py
-pytest tests/e2e/test_kilocode.py
-pytest tests/e2e/test_runtime.py
-pytest tests/e2e/test_hermes.py
-pytest tests/e2e/test_boot_gate.py
-pytest tests/e2e/test_provider_failover.py
-
-# Note: test_proof.py will be created when src/proof/ is implemented
+# Full test suite
+python -m pytest tests/ -v
 ```
 
----
+## Related Repositories
+
+- **KiloCode Azure**: https://github.com/Ghenghis/kilocode-Azure2
+- **Hermes Agent**: https://github.com/Ghenghis/hermes-agent-2026.4.13
 
 ## License
 
-This project incorporates code from various sources with their respective licenses:
-
-- **hermes-agent**: MIT License
-- **kilocode-Azure2**: MIT License
-- **MCP SSH Agent**: MIT License
-- **claude-devtools**: MIT License
-- **opcode**: AGPL-3.0 (patterns only)
-- **claudecodeui**: AGPL-3.0 (patterns only)
-
-See individual source repositories for details.
-
----
-
-## Contributing
-
-1. Read the [GAP_ANALYSIS.md](GAP_ANALYSIS.md) to understand what's missing
-2. Check the [MERGE_MATRIX.md](MERGE_MATRIX.md) for integration strategies
-3. Follow the [Implementation Roadmap](docs/08_IMPLEMENTATION_ROADMAP.md)
-
----
-
-*Version 17.0 - Consolidated 2026-04-20*
+Private - All rights reserved
