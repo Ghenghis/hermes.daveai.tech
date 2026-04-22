@@ -1,0 +1,71 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install Python dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio
+    
+    - name: Run Python tests
+      run: |
+        python -m pytest tests/unit -v --tb=short
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install Node dependencies
+      run: npm ci
+    
+    - name: Run Playwright tests
+      run: |
+        npx playwright install
+        python run_playwright_tests.py --ci
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results
+        path: test-results/
+        retention-days: 7
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install linting tools
+      run: |
+        pip install flake8 black isort
+    
+    - name: Run linters
+      run: |
+        flake8 src --count --select=E9,F63,F7,F82 --show-source --statistics
+        black --check src tests || true
+        isort --check-only src tests || true
